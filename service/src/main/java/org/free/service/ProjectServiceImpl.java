@@ -29,7 +29,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     //@PostConstruct
     private void init() {
-
+        //Setup test data here
     }
 
     private String dateToString(LocalDateTime date) {
@@ -42,7 +42,10 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     public void process() {
-
+        //Process data here
+        //Assumptions:
+        //No Task overlap with other project
+        //No Task that will loop
     }
 
 }
