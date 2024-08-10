@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        secure: true
+        http-only: true
+
+spring:
+  domain:
+    name: https://localhost:8080
+
+logging:
+  level:
+    ROOT: WARN
+    org.free: DEBUG
