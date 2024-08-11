@@ -88,13 +88,18 @@ public class ProjectServiceImpl implements ProjectService {
     public void process() {
         //Process data here
         //Assumptions:
+        //All project can start at the same time
+        //All task can start at the same time as long as they don't depend on something
         //No Task overlap with other project
         //No Task that will loop
         init();
         //Show all records here first
         log.warn("===== Records to be process =====");
         for (Project project : projects) {
+            log.warn("\n===== ===== ===== =====");
             log.warn("Project Name: %s", project.getName());
+            log.warn("Project Start Date: %s", project.getStart());
+            log.warn("Project End Date: %s", project.getEnd());
         }
     }
 }
