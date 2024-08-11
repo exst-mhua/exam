@@ -90,7 +90,7 @@ public class ProjectServiceImpl implements ProjectService {
         //Assumptions:
         //No Task overlap with other project
         //No Task that will loop
-
+        init();
         //Show all records here first
         log.warn("===== Records to be process =====");
         for (Project project : projects) {
