@@ -108,8 +108,8 @@ public class ProjectServiceImpl implements ProjectService {
                 if (task.getDependsOn() != null && !task.getDependsOn().isEmpty()) {
 
                 } else {
-                    if (longestDuration < task.getDurationinDays()) {
-                        longestDuration = task.getDurationinDays();
+                    if (longestDuration < task.getDurationInDays()) {
+                        longestDuration = task.getDurationInDays();
                     }
                 }
             }
