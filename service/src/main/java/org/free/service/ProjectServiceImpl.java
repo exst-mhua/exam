@@ -97,9 +97,9 @@ public class ProjectServiceImpl implements ProjectService {
         log.warn("===== Records to be process =====");
         for (Project project : projects) {
             log.warn("\n===== ===== ===== =====");
-            log.warn("Project Name: %s", project.getName());
-            log.warn("Project Start Date: %s", project.getStart());
-            log.warn("Project End Date: %s", project.getEnd());
+            log.warn("Project Name: " + project.getName());
+            log.warn("Project Start Date: " + project.getStart());
+            log.warn("Project End Date: " + project.getEnd());
         }
     }
 }
