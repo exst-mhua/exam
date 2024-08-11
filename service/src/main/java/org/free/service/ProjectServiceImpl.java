@@ -15,9 +15,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
@@ -27,9 +26,30 @@ import static java.util.Collections.emptyMap;
 @Service("projectService")
 public class ProjectServiceImpl implements ProjectService {
 
+    private List<Project> projects;
+
     //@PostConstruct
     private void init() {
         //Setup test data here
+        projects = new ArrayList<Project>();
+
+        Project project1 =  new Project();
+        project1.setId(1);
+        project1.setName("Project One");
+
+        List<Task> tasks = new ArrayList<Task>();
+
+        Task project1task1 = new Task();
+        project1task1.setId(1);
+        project1task1.setProjectId(1);
+        project1task1.setName("Task One of Project One");
+        project1task1.setDurationsInDays(2);
+
+        Task project1task1subtask1 = new Task();
+        project1task1subtask1.setId(2);
+        project1task1subtask1.setProjectId(1);
+        project1task1subtask1.setName("Sub Task One of Task One of Project One");
+        project1task1subtask1.setDurationsInDays(3);
     }
 
     private String dateToString(LocalDateTime date) {
@@ -47,5 +67,4 @@ public class ProjectServiceImpl implements ProjectService {
         //No Task overlap with other project
         //No Task that will loop
     }
-
 }
