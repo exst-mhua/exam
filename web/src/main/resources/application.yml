@@ -15,3 +15,6 @@ logging:
   level:
     ROOT: WARN
     org.free: DEBUG
+
+cron:
+  project-planner: "5 * * * * ?"
