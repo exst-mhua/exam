@@ -14,6 +14,6 @@ public class Task implements Serializable {
     private Long projectId;
     private String name;
     private String description;
-    private Long durationInDays;
+    private int durationInDays;
     private List<Task> dependsOn;
 }
