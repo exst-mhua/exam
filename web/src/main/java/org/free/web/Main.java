@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.stereotype.Controller;
 
-//@EnableScheduling
+@EnableScheduling
 @ComponentScan(basePackages = {
         "org.free"
 })
