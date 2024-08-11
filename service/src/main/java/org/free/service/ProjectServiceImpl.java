@@ -96,7 +96,7 @@ public class ProjectServiceImpl implements ProjectService {
 
         log.warn("===== Records to be process =====");
         for (Project project : projects) {
-            log.warn("\n===== ===== ===== =====");
+            log.warn("===== ===== ===== =====");
             log.warn("Project Name: " + project.getName());
             log.warn("Project Start Date: " + project.getStart());
             log.warn("Project End Date: " + project.getEnd());
@@ -106,7 +106,17 @@ public class ProjectServiceImpl implements ProjectService {
             int longestDuration = 0;
             for (Task task : project.getTasks()) {
                 if (task.getDependsOn() != null && !task.getDependsOn().isEmpty()) {
-
+                    
+                    for (Task task1 : task.getDependsOn()) {
+                        if (task.getDependsOn() != null && !task.getDependsOn().isEmpty()) {
+                            //TODO
+                        } else {
+                            if (longestDuration < task.getDurationInDays()) {
+                                longestDuration = task.getDurationInDays();
+                            }
+                        }
+                    }
+                    longestDuration += task.getDurationInDays();
                 } else {
                     if (longestDuration < task.getDurationInDays()) {
                         longestDuration = task.getDurationInDays();
