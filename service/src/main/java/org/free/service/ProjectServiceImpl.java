@@ -108,11 +108,11 @@ public class ProjectServiceImpl implements ProjectService {
                 if (task.getDependsOn() != null && !task.getDependsOn().isEmpty()) {
                     
                     for (Task task1 : task.getDependsOn()) {
-                        if (task.getDependsOn() != null && !task.getDependsOn().isEmpty()) {
+                        if (task1.getDependsOn() != null && !task1.getDependsOn().isEmpty()) {
                             //TODO
                         } else {
-                            if (longestDuration < task.getDurationInDays()) {
-                                longestDuration = task.getDurationInDays();
+                            if (longestDuration < task1.getDurationInDays()) {
+                                longestDuration = task1.getDurationInDays();
                             }
                         }
                     }
