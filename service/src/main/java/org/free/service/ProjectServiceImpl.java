@@ -37,19 +37,43 @@ public class ProjectServiceImpl implements ProjectService {
         project1.setId(1);
         project1.setName("Project One");
 
-        List<Task> tasks = new ArrayList<Task>();
+        List<Task> project1Tasks = new ArrayList<Task>();
 
         Task project1task1 = new Task();
         project1task1.setId(1);
         project1task1.setProjectId(1);
         project1task1.setName("Task One of Project One");
         project1task1.setDurationsInDays(2);
+        projects.add(project1);
+
+        List<Task> project1Task1Tasks = new ArrayList<Task>();
 
         Task project1task1subtask1 = new Task();
         project1task1subtask1.setId(2);
         project1task1subtask1.setProjectId(1);
         project1task1subtask1.setName("Sub Task One of Task One of Project One");
         project1task1subtask1.setDurationsInDays(3);
+
+        project1Task1Tasks.add(project1task1subtask1);
+        project1task1.setDependsOn(project1Task1Tasks);
+        project1Tasks.add(project1task1);
+        project1.setTasks(project1Tasks);
+
+        Project project2 =  new Project();
+        project2.setId(2);
+        project2.setName("Project Two");
+
+        List<Task> project2Tasks = new ArrayList<Task>();
+
+        Task project2task1 = new Task();
+        project2task1.setId(3);
+        project2task1.setProjectId(2);
+        project2task1.setName("Task One of Project Two");
+        project2task1.setDurationsInDays(5);
+
+        project2Tasks.add(project2task1);
+        project2.setTasks(project2Tasks);
+        projects.add(project2);
     }
 
     private String dateToString(LocalDateTime date) {
@@ -66,5 +90,8 @@ public class ProjectServiceImpl implements ProjectService {
         //Assumptions:
         //No Task overlap with other project
         //No Task that will loop
+
+        //Show all records here first
+        log.warn("===== Records to be process =====");
     }
 }
