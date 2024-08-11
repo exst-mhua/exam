@@ -114,7 +114,7 @@ public class ProjectServiceImpl implements ProjectService {
                 }
             }
 
-            project.setEnd(LocalDateTime.now().plus(longestDuration));
+            project.setEnd(LocalDateTime.now().plusDays(longestDuration));
 
             log.warn("===== ===== ===== =====");
             log.warn("After processing");
